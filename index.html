@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    .root{
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://wallpaperaccess.com/full/2314950.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.left-cont{
+    justify-content: center;
+    align-items: center;
+}
+
+
+.input-cont{
+     display: flex;
+    padding: 30px;
+    height: 50%;
+    background-color: white;
+    margin-top: 40%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+}
+
+.input-cont input{
+    
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 50px;
+    width: 80%;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+@media only screen and (max-width:700px){
+    .input-cont{
+         margin-left: 10px;
+  margin-right: 10px;
+    }
+ 
+}
+
+form button {
+
+    /* remove default behavior */
+    appearance:none;
+    -webkit-appearance:none;
+  
+    /* usual styles */
+    padding:10px;
+    border:none;
+    background-color:#3F51B5;
+    color:#fff;
+    font-weight:600;
+    border-radius:5px;
+    width:100%;
+    margin-top: 5px;
+  
+  }
+</style>
+<body>
+    <div class='root'>
+     
+        <div class='left-cont'>
+        
+  <div class='input-cont'>
+ 
+ <form action="/" method="post">
+   <input type="text" placeholder='Username' id="username"name="username" />
+  
+   <input type="text" placeholder='Password' id="password"name="password" />
+ 
+   <button class="btn" type="submit" name="submit">Add To File</button>
+   <button onclick="runProgram()">Run Login Automation</button>
+</form>
+   
+    </div>
+        </div>
+       
+    
+    <script >
+        function runProgram(){
+            fetch('/runProgram').then((response)=> console.log(response));
+        }
+    </script>
+</body>
+
+
+</html>
